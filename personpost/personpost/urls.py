@@ -1,4 +1,4 @@
-"""adminproject URL Configuration
+"""personpost URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import adminapp.views
+import person.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', adminapp.views.home, name="home"),
+    path('people/', person.views.people, name="people"),
+    path('people/<int:pk>', person.views.post, name="post"),
 ]
